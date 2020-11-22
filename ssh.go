@@ -88,7 +88,6 @@ func (s *SSH) RunCommand(args []string) (string, error) {
 		return e, errors.New(e)
 	}
 
-	log.Printf("exec: %s\n", strings.Join(args, " "))
 	res, err := exec.Command(args[0], args[1:]...).CombinedOutput()
 	return string(res), err
 }

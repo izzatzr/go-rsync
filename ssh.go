@@ -2,7 +2,6 @@ package rsync
 
 import (
 	"errors"
-	"log"
 	"os/exec"
 	"strconv"
 	"strings"
@@ -47,8 +46,6 @@ func (s *SSH) Command(args []string) []string {
 		cmd = append(cmd, "-p", s.Password)
 		cmd = append(cmd, "ssh")
 	}
-
-	cmd = append(cmd, "-T")
 
 	if s.ConfigFile != "" {
 		cmd = append(cmd, "-F", s.ConfigFile)
